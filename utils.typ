@@ -122,14 +122,22 @@
     vars.socials.pairs().map(((k, (l, v))) => [#k: #link(l, v)]).join(separator)
   )
 
-  let skill(hide: false, separator: ", ", last: none, category, body) = {
+  let skill(
+    hide: false,
+    separator: ", ",
+    last: none,
+    weight: "bold",
+    category,
+    body,
+  ) = {
     if last == none { last = separator }
     let multi = type(body) == array
     let skills = if multi { body } else { (body,) }
+    let entry = text.with(weight: weight)
     let content = if multi {
-      body.join(separator, last: last)
+      body.map(skill => entry(skill)).join(separator, last: last)
     } else {
-      body
+      entry(body)
     }
     [#if not hide { content }#metadata((
         category: category,
