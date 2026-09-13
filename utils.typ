@@ -63,6 +63,17 @@
 
   set page(margin: 24pt)
 
+  show link: it => {
+    let size = 0.75em
+    [#text(it)#octique-inline(
+        color: vars.colors.accent,
+        width: size,
+        height: size,
+        baseline: 0em,
+        "link-external",
+      )]
+  }
+
   body
 }
 
