@@ -1,0 +1,11 @@
+#:schema https://www.schemastore.org/typst.json
+[package]
+name = "atsthetic-cv"
+entrypoint = "lib.typ"
+version = "0.1.0"
+authors = ["arsmoriendy <@arsmoriendy>"]
+license = "MIT"
+description = "ATS-friendly aesthetic cv"
+keywords = ["cv", "ats"]
+repository = "https://github.com/arsmoriendy/atsthetic-cv"
+categories = ["cv"]
