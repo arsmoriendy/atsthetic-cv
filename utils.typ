@@ -48,6 +48,9 @@
 )
 
 #let init-cv(vars: default-vars, body) = {
+  /**
+   * Set rules
+   */
   set document(
     title: "Curriculum Vitae / Resume",
     author: vars.name + " <" + vars.email + ">",
@@ -63,6 +66,9 @@
 
   set page(margin: 24pt)
 
+  /**
+   * Show rules
+   */
   show link: it => {
     let size = 0.75em
     [#text(it)#octique-inline(
