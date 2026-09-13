@@ -9,7 +9,6 @@
   email: "jane.doe@example.com",
   socials: (
     Website: ("https://example.com", [example.com]),
-    Email: ("mailto:jane.doe@example.com", [jane.doe\@example.com]),
     Tel: ("tel:+15551234567", [+1 (555) 123-4567]),
     Github: ("https://github.com/janedoe", [\@janedoe]),
   ),

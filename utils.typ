@@ -35,7 +35,6 @@
   email: "jdoe@mail.com",
   socials: (
     Website: ("https://jdoe.com", [jdoe.com]),
-    Email: ("mailto:jdoe@mail.com", [jdoe\@mail.com]),
     Tel: ("tel:+1234567890", [+1234567890]),
     Github: ("https://github.com/jdoe", [\@jdoe]),
   ),
@@ -125,8 +124,10 @@
   ))
 
   let socials(separator: h(1em)) = (
-    vars.socials.pairs().map(((k, (l, v))) => [#k: #link(l, v)]).join(separator)
-  )
+    [Email: #link("mailto:" + vars.email, vars.email)],
+    ..vars.socials.pairs().map(((k, (l, v))) => [#k: #link(l, v)]),
+  ).join(separator)
+
 
   let skill(
     hide: false,
