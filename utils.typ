@@ -91,7 +91,7 @@
     fill: vars.colors.muted,
     width: 100%,
     radius: radius,
-    heading(level: level, body),
+    heading(level: level, text(size: vars.font-size, body)),
   )
 
   let activity(
