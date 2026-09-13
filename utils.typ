@@ -206,7 +206,7 @@
     )
   }
 
-  let header(profile-image: none, image-radius: 3pt, radius: 3pt) = {
+  let header(profile-image: none, radius: 3pt) = {
     let with-image = profile-image != none
 
     let content = [
@@ -233,10 +233,7 @@
         gutter: 1em,
         ..if with-image {
           (
-            block(radius: image-radius, clip: true, image(
-              profile-image.path,
-              height: profile-image.height,
-            )),
+            profile-image,
             content,
           )
         } else { (content,) },
@@ -244,11 +241,14 @@
     )
   }
 
+  let profile-block = block.with(radius: 3pt, clip: true)
+
   (
     header: header,
     section: section,
     activity: activity,
     skill: skill,
     skills: skills,
+    profile-block: profile-block,
   )
 }
