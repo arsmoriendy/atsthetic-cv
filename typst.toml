@@ -9,3 +9,9 @@ description = "ATS-friendly aesthetic cv"
 keywords = ["cv", "ats"]
 repository = "https://github.com/arsmoriendy/atsthetic-cv"
 categories = ["cv"]
+exclude = ["./assets"]
+
+[template]
+path = "template"
+entrypoint = "common.typ"
+thumbnail = "assets/thumbnail.webp"

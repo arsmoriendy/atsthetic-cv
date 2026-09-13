@@ -1,4 +1,4 @@
-#import "lib.typ": generate-blocks, init-cv
+#import "@preview/atsthetic:0.1.0": generate-blocks, init-cv
 
 #let vars = (
   name: "Jane Doe",
