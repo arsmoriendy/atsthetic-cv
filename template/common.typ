@@ -1,4 +1,4 @@
-#import "@preview/atsthetic:0.1.0": generate-blocks, init-cv
+#import "@preview/atsthetic-cv:0.1.0": generate-blocks, init-cv
 
 #let vars = (
   name: "Jane Doe",
@@ -20,7 +20,14 @@
   font-size: 8pt,
 )
 
-#let (header, section, activity, skills, skill: s) = generate-blocks(vars: vars)
+#let (
+  header,
+  profile-block,
+  section,
+  activity,
+  skills,
+  skill: s,
+) = generate-blocks(vars: vars)
 
 #let content = [
   #section[Work Experience]
