@@ -13,5 +13,5 @@ exclude = ["./assets"]
 
 [template]
 path = "template"
-entrypoint = "common.typ"
+entrypoint = "./template/with-image.typ"
 thumbnail = "assets/thumbnail.webp"
