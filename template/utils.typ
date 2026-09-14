@@ -77,6 +77,10 @@
         )]
     }
 
+    show heading.where(level: 4): set text(
+      fill: colors.foreground.transparentize(30%),
+    )
+
     body
   }
 
