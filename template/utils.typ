@@ -31,7 +31,7 @@
 #let generate-blocks(
   name: "Jane Doe",
   title: [Full-stack Developer],
-  additional-info: [Madrid, Spain (UTC+1)],
+  additional-info: [Based in Madrid, Spain (UTC+1)],
   summary: [Full-stack developer with 3+ years of experience building production
     systems end to end, from frontend interfaces to backend infrastructure and
     DevOps tooling.],
