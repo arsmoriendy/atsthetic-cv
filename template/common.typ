@@ -1,4 +1,4 @@
-#import "lib.typ": generate-blocks
+#import "internal/lib.typ": generate-blocks
 
 #let (
   init-cv,
