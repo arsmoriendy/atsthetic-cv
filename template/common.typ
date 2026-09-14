@@ -1,25 +1,5 @@
 #import "lib.typ": generate-blocks
 
-#let vars = (
-  name: "Jane Doe",
-  title: [Full-stack Developer],
-  summary: [Full-stack developer with 3+ years of experience building production
-    systems end to end, from frontend interfaces to backend infrastructure and
-    DevOps tooling.],
-  email: "jane.doe@example.com",
-  socials: (
-    Website: ("https://example.com", [example.com]),
-    Tel: ("tel:+15551234567", [+1 (555) 123-4567]),
-    Github: ("https://github.com/janedoe", [\@janedoe]),
-  ),
-  colors: (
-    foreground: rgb("#504945"),
-    muted: rgb("#504945").transparentize(85%),
-    accent: rgb("#B57614"),
-  ),
-  font-size: 8pt,
-)
-
 #let (
   init-cv,
   header,
@@ -28,7 +8,7 @@
   activity,
   skills,
   skill: s,
-) = generate-blocks(..vars)
+) = generate-blocks()
 
 #let content = [
   #section[Work Experience]
