@@ -1,7 +1,7 @@
 #:schema https://www.schemastore.org/typst.json
 [package]
 name = "atsthetic-cv"
-entrypoint = "lib.typ"
+entrypoint = "./template/internal/lib.typ"
 version = "0.1.0"
 authors = ["arsmoriendy <@arsmoriendy>"]
 license = "MIT"
