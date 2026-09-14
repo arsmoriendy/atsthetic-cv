@@ -8,7 +8,7 @@
   activity,
   skills,
   skill: s,
-) = generate-blocks()
+) = generate-blocks(font-size: 7.9pt)
 
 #let content = [
   #section[Work Experience]
