@@ -1,4 +1,4 @@
-#import "lib.typ": generate-blocks, init-cv
+#import "lib.typ": generate-blocks
 
 #let vars = (
   name: "Jane Doe",
@@ -21,13 +21,14 @@
 )
 
 #let (
+  init-cv,
   header,
   profile-block,
   section,
   activity,
   skills,
   skill: s,
-) = generate-blocks(vars: vars)
+) = generate-blocks(..vars)
 
 #let content = [
   #section[Work Experience]

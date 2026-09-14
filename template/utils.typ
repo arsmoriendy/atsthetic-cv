@@ -28,16 +28,18 @@
   prefix: "[" + namespace + "] ",
 )
 
-#let default-vars = (
-  name: "John Doe",
-  title: [Software Developer & DevOps Engineer],
+#let generate-blocks(
+  name: "Jane Doe",
+  title: [Full-stack Developer],
   additional-info: [Madrid, Spain (UTC+1)],
-  summary: [#lorem(33)],
-  email: "jdoe@mail.com",
+  summary: [Full-stack developer with 3+ years of experience building production
+    systems end to end, from frontend interfaces to backend infrastructure and
+    DevOps tooling.],
+  email: "jane.doe@example.com",
   socials: (
-    Website: ("https://jdoe.com", [jdoe.com]),
-    Tel: ("tel:+1234567890", [+1234567890]),
-    Github: ("https://github.com/jdoe", [\@jdoe]),
+    Website: ("https://example.com", [example.com]),
+    Tel: ("tel:+15551234567", [+1 (555) 123-4567]),
+    Github: ("https://github.com/janedoe", [\@janedoe]),
   ),
   colors: (
     foreground: rgb("#504945"),
@@ -45,53 +47,47 @@
     accent: rgb("#B57614"),
   ),
   font-size: 8pt,
-)
+) = {
+  let init-cv(body) = {
+    /**
+     * Set rules
+     */
+    set document(
+      title: "Curriculum Vitae / Resume",
+      author: name + " <" + email + ">",
+      keywords: ("cv", "resume"),
+      date: datetime.today(),
+    )
 
-#let init-cv(vars: default-vars, body) = {
-  /**
-   * Set rules
-   */
-  set document(
-    title: "Curriculum Vitae / Resume",
-    author: vars.name + " <" + vars.email + ">",
-    keywords: ("cv", "resume"),
-    date: datetime.today(),
-  )
+    set text(font: "Space Grotesk", fill: colors.foreground, size: font-size)
 
-  set text(
-    font: "Space Grotesk",
-    fill: vars.colors.foreground,
-    size: vars.font-size,
-  )
+    set page(margin: 24pt)
 
-  set page(margin: 24pt)
+    /**
+     * Show rules
+     */
+    show link: it => {
+      let size = 0.75em
+      [#text(it)#octique-inline(
+          color: colors.accent,
+          width: size,
+          height: size,
+          baseline: 0em,
+          "link-external",
+        )]
+    }
 
-  /**
-   * Show rules
-   */
-  show link: it => {
-    let size = 0.75em
-    [#text(it)#octique-inline(
-        color: vars.colors.accent,
-        width: size,
-        height: size,
-        baseline: 0em,
-        "link-external",
-      )]
+    body
   }
 
-  body
-}
-
-#let generate-blocks(vars: default-vars) = {
   let section(level: 2, radius: 2pt, body) = block(
     inset: (y: 0.5em),
     outset: (x: 1em),
     above: 1.5em,
-    fill: vars.colors.muted,
+    fill: colors.muted,
     width: 100%,
     radius: radius,
-    heading(level: level, text(size: vars.font-size, body)),
+    heading(level: level, text(size: font-size, body)),
   )
 
   let activity(
@@ -116,19 +112,17 @@
       line(..separator-params)
     } else { none },
     if right != none {
-      text(
-        fill: vars.colors.foreground.transparentize(30%),
-        weight: "thin",
-        [#text(fill: white.transparentize(100%), [ |]) #right],
-      )
+      text(fill: colors.foreground.transparentize(30%), weight: "thin", [#text(
+          fill: white.transparentize(100%),
+          [ |],
+        ) #right])
     } else { none },
   ))
 
-  let socials(separator: h(1em)) = (
-    [Email: #link("mailto:" + vars.email, vars.email)],
-    ..vars.socials.pairs().map(((k, (l, v))) => [#k: #link(l, v)]),
+  let socials-block(separator: h(1em)) = (
+    [Email: #link("mailto:" + email, email)],
+    ..socials.pairs().map(((k, (l, v))) => [#k: #link(l, v)]),
   ).join(separator)
-
 
   let skill(
     hide: false,
@@ -196,7 +190,7 @@
           v
             .dedup()
             .map(skill => box(
-              fill: vars.colors.muted,
+              fill: colors.muted,
               inset: (x: 3pt),
               outset: (y: 2pt),
               radius: 2pt,
@@ -213,20 +207,20 @@
 
     let content = [
       // name
-      = #block(inset: (bottom: 0.2em), text(size: 1.5em, vars.name))
+      = #block(inset: (bottom: 0.2em), text(size: 1.5em, name))
 
       // job title
-      #block(text(size: 1.5em, vars.title))
-      #if vars.additional-info != none { vars.additional-info }
-      #line(length: 100%, stroke: vars.colors.muted)
-      #socials()
+      #block(text(size: 1.5em, title))
+      #if additional-info != none { additional-info }
+      #line(length: 100%, stroke: colors.muted)
+      #socials-block()
 
-      #box(heading(level: 2, text(size: vars.font-size)[Summary])) ---
-      #vars.summary
+      #box(heading(level: 2, text(size: font-size)[Summary])) ---
+      #summary
     ]
 
     block(
-      fill: vars.colors.muted,
+      fill: colors.muted,
       outset: (x: 1em),
       inset: (y: 1.3em),
       width: 100%,
@@ -253,5 +247,6 @@
     skill: skill,
     skills: skills,
     profile-block: profile-block,
+    init-cv: init-cv,
   )
 }

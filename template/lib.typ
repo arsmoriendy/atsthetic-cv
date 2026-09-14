@@ -1,1 +1,1 @@
-#import "utils.typ": generate-blocks, init-cv
+#import "utils.typ": generate-blocks

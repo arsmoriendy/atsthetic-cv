@@ -1,4 +1,4 @@
 #import "common.typ": *
-#show: init-cv.with(vars: vars)
+#show: init-cv.with()
 #header()
 #content
