@@ -31,6 +31,7 @@
 #let default-vars = (
   name: "John Doe",
   title: [Software Developer & DevOps Engineer],
+  additional-info: [Madrid, Spain (UTC+1)],
   summary: [#lorem(33)],
   email: "jdoe@mail.com",
   socials: (
@@ -215,7 +216,8 @@
       = #block(inset: (bottom: 0.2em), text(size: 1.5em, vars.name))
 
       // job title
-      #text(size: 1.5em, vars.title)\
+      #block(text(size: 1.5em, vars.title))
+      #if vars.additional-info != none { vars.additional-info }
       #line(length: 100%, stroke: vars.colors.muted)
       #socials()
 

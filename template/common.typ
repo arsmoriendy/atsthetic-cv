@@ -1,4 +1,4 @@
-#import "@preview/atsthetic-cv:0.1.0": generate-blocks, init-cv
+#import "@local/atsthetic-cv:0.1.0": generate-blocks, init-cv
 
 #let vars = (
   name: "Jane Doe",
