@@ -1,4 +1,4 @@
-#import "common.typ": *
+#import "common/blocks.typ": *
 #show: init-cv
 #header()
-#content
+#include "common/content.typ"
