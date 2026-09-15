@@ -51,3 +51,6 @@ register your skills to be showcased later using the `skills` function.
 These functions helps you **aggregate** your skills, and avoid **duplicate**
 skills to keep your cv short. A warning will be shown on compile time if a
 duplicate is found.
+
+You can also register skill(s) using the `s` function without showing it inline
+by setting the `hide` param to `true`.
