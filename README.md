@@ -1,10 +1,10 @@
-# atsthetic-cv
-
 An ATS-friendly, aesthetic CV/resume template for [Typst](https://typst.app).
 
 Resume content is written as plain, machine-parseable text (no multi-column
 layout tricks), while still looking polished — rounded section bars, dotted rule
 separators, pill-style skill chips, and optional profile photo.
+
+## Examples
 
 | Without profile image                | With profile image                                       |
 | ------------------------------------ | -------------------------------------------------------- |
@@ -65,4 +65,5 @@ You can also register skill(s) using the `s` function without showing it inline
 by setting the `hide` param to `true`.
 
 ## License
+
 [MIT](LICENSE)
