@@ -6,7 +6,9 @@ Resume content is written as plain, machine-parseable text (no multi-column
 layout tricks), while still looking polished — rounded section bars, dotted rule
 separators, pill-style skill chips, and optional profile photo.
 
-![Thumbnail](assets/thumbnail.png)
+| Without profile image                | With profile image                                       |
+| ------------------------------------ | -------------------------------------------------------- |
+| ![Main thumbnail](./assets/main.png) | ![With profile image thumbnail](./assets/with-image.png) |
 
 ## Features
 
