@@ -63,3 +63,6 @@ duplicate is found.
 
 You can also register skill(s) using the `s` function without showing it inline
 by setting the `hide` param to `true`.
+
+## License
+[MIT](LICENSE)
