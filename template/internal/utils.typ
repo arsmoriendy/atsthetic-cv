@@ -100,6 +100,7 @@
     body
   }
 
+  /// A section is just a stylized heading
   let section(level: 2, radius: 2pt, body) = block(
     inset: (y: 0.5em),
     outset: (x: 1em),
@@ -110,6 +111,14 @@
     heading(level: level, text(size: font-size, body)),
   )
 
+  /// An activity can be a job position, education, certificate accomplishment,
+  /// etc
+  /// - right (content, none): What to display on the right side of the
+  ///   activity. Can be period of time, level of proficiency, etc.
+  /// - level (int): The heading level of an activity to be outlined
+  /// - separator (boolean): Show or hide the left and right separator
+  /// - separator-params (dictionary): `line` parameters for the separator
+  /// - gutter (length): Gap in between the left, separator and right
   let activity(
     right: none,
     level: 3,
@@ -144,6 +153,13 @@
     ..socials.pairs().map(((k, (l, v))) => [#k: #link(l, v)]),
   ).join(separator)
 
+  /// Register one or more skill(s)
+  /// - hide (boolean): Hide the skill(s) inline, use only for registration
+  /// - separator (content): Inline separator if you are showing multiple skills
+  /// - last (content, none): The last inline separator if you are showing multiple skills
+  /// - weight (str): The font weight of inline skill(s)
+  /// - category (str): Category of the skill(s) to aggregate
+  /// - body (content, array): A single skill an array of skills
   let skill(
     hide: false,
     separator: ", ",
@@ -167,6 +183,8 @@
       ))<skill>]
   }
 
+  /// Show registered skills
+  /// - sort (boolean): Sort categories by amount of skills
   let skills(sort: true) = context {
     let skill-dict = (:)
     for skill in query(<skill>) {
