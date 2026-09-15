@@ -28,6 +28,21 @@
   prefix: "[" + namespace + "] ",
 )
 
+/// Generate the building blocks of your cv
+/// - name (str):
+/// - title (content): Your current job title
+/// - additional-info (content, none): Optional information to show under your
+///   title
+/// - summary (content): A summary to show under your socials
+/// - email (str): Your email address, this is added to the document metadata
+/// - socials (dictionary): Maps a social platform label (e.g. `Website`, `Github`)
+///   to a tuple of `(url, display-content)`, where `url` is the link target
+///   (e.g. `mailto:`, `tel:`, or `https://`) and `display-content` is the
+///   rendered label
+/// - colors (dictionary):Theme colors, with keys `foreground`, `muted`, and
+///   `accent`, each a `color`
+/// - font-size (length):
+/// - font-family (str):
 #let generate-blocks(
   name: "Jane Doe",
   title: [Full-stack Developer],
