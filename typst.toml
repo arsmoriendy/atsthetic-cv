@@ -12,5 +12,5 @@ exclude = ["./assets", "./flake.lock", "./flake.nix", "./justfile"]
 
 [template]
 path = "template"
-entrypoint = "./template/with-image.typ"
+entrypoint = "with-image.typ"
 thumbnail = "assets/with-image.png"
