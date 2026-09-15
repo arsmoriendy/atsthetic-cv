@@ -1,4 +1,3 @@
-#:schema https://www.schemastore.org/typst.json
 [package]
 name = "atsthetic-cv"
 entrypoint = "./template/internal/lib.typ"
