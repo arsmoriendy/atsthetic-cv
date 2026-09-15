@@ -39,3 +39,15 @@ typst init @preview/atsthetic-cv cv && cd cv
    in `with-image.typ`. Do your own research on whether or not this is a good
    idea.
 4. Compile either `main.typ` or `with-image.typ`
+
+## Skills
+
+By default the template uses the skill helpers (i.e., the `s` and `skills`
+function) to showcase your skills.
+
+The `s` function is an alias for the internal `skill` function, and helps you
+register your skills to be showcased later using the `skills` function.
+
+These functions helps you **aggregate** your skills, and avoid **duplicate**
+skills to keep your cv short. A warning will be shown on compile time if a
+duplicate is found.
