@@ -47,6 +47,7 @@
     accent: rgb("#B57614"),
   ),
   font-size: 8pt,
+  font-family: "Space Grotesk",
 ) = {
   let init-cv(body) = {
     /**
@@ -59,7 +60,7 @@
       date: datetime.today(),
     )
 
-    set text(font: "Space Grotesk", fill: colors.foreground, size: font-size)
+    set text(font: font-family, fill: colors.foreground, size: font-size)
 
     set page(margin: 24pt)
 
