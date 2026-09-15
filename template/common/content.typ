@@ -46,14 +46,6 @@ test coverage of the touched modules to 90%.
     ([Postgres], [Prisma]),
   ) data access, #s("Miscellaneous")[Stripe] payments, and #s("DevOps")[Vercel]
   deployment.
-- Shipped #link("https://example.org", [URL Shortener])\; a link shortener with
-  custom slugs and click analytics, featuring a #s("Web")[Fastify] API on #s(
-    "DevOps",
-  )[Kubernetes], #s("Database")[MySQL] persistence, and #s(
-    "DevOps",
-    ([Prometheus], [Grafana]),
-    separator: "/",
-  ) monitoring.
 
 #activity([Infrastructure Administrator \@ Retail Co.], right: [March 2020 -
   August 2022])

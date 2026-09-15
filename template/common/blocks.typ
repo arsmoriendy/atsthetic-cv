@@ -8,4 +8,4 @@
   activity,
   skills,
   skill: s,
-) = generate-blocks(font-size: 7.9pt)
+) = generate-blocks()
