@@ -8,7 +8,7 @@ description = "ATS-friendly aesthetic cv"
 keywords = ["cv", "ats"]
 repository = "https://github.com/arsmoriendy/atsthetic-cv"
 categories = ["cv"]
-exclude = ["./assets"]
+exclude = ["./assets", "./flake.lock", "./flake.nix", "./justfile"]
 
 [template]
 path = "template"
