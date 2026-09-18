@@ -4,5 +4,6 @@ generate-asset file:
     typst compile --pages 1 --ppi 250 ./template/{{ file }}.typ ./assets/{{ file }}.png
 
 package:
+    rm -rf dist
     mkdir -p dist
     cp -r ./typst.toml ./template/ ./assets/ ./LICENSE ./README.md ./blocks.typ ./lib.typ ./utils.typ dist
