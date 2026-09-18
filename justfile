@@ -5,4 +5,4 @@ generate-asset file:
 
 package:
     mkdir -p dist
-    cp -r ./typst.toml ./template/ ./assets/ ./LICENSE ./README.md dist
+    cp -r ./typst.toml ./template/ ./assets/ ./LICENSE ./README.md ./blocks.typ ./lib.typ ./utils.typ dist
